@@ -9,6 +9,7 @@ import lombok.*;
 @Builder
 public class PersonDto {
 
+    private Long id;
     private String name;
     private String city;
     private Integer age;

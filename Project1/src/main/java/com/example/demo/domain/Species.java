@@ -1,6 +1,6 @@
 package com.example.demo.domain;
 
-public enum AnimalType {
+public enum Species {
     ZEBRA,
     BEAR,
     WOLF,

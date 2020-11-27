@@ -7,8 +7,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class People {
+public class Person {
 
+    private Long id;
     private String name;
     private String city;
     private Integer age;
