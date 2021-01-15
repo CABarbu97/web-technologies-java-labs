@@ -9,33 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-01-15T12:30:10+0200",
+    date = "2021-01-15T20:20:06+0200",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.9.1 (Ubuntu)"
 )
 @Component
 public class SymptomMapperImpl implements SymptomMapper {
-
-    @Override
-    public Symptom toEntity(SymptomDto dto) {
-        if ( dto == null ) {
-            return null;
-        }
-
-        Symptom symptom = new Symptom();
-
-        return symptom;
-    }
-
-    @Override
-    public SymptomDto toDto(Symptom entity) {
-        if ( entity == null ) {
-            return null;
-        }
-
-        SymptomDto symptomDto = new SymptomDto();
-
-        return symptomDto;
-    }
 
     @Override
     public List<Symptom> toEntity(List<SymptomDto> dtoList) {
@@ -63,5 +41,30 @@ public class SymptomMapperImpl implements SymptomMapper {
         }
 
         return list;
+    }
+
+    @Override
+    public Symptom toEntity(SymptomDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        String name = null;
+        String description = null;
+
+        Symptom symptom = new Symptom( name, description );
+
+        return symptom;
+    }
+
+    @Override
+    public SymptomDto toDto(Symptom entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        SymptomDto symptomDto = new SymptomDto();
+
+        return symptomDto;
     }
 }

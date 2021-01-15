@@ -14,5 +14,4 @@ public class Medic {
     private String lastName;
     private String location;
     private List<Patient> patientList;
-
 }

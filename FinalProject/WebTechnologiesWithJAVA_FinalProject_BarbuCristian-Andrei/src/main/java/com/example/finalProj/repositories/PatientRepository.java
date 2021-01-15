@@ -13,7 +13,9 @@ public class PatientRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Patient create(Patient patient){
-        
-    }
+    //metode CRUD pentru patient
+
+//    public Patient create(Patient patient){
+//
+//    }
 }

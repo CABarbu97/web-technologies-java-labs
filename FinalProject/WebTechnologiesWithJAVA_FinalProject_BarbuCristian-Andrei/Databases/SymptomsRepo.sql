@@ -1,7 +1,10 @@
-create database Symptoms;
+create database MedicalApp;
+
+USE MedicalApp;
 
 insert into SymptomsRepo values(NULL, "Headache", "Pain in h");
 
 SELECT * FROM SymptomsRepo;
 
-USE Symptoms;
+SELECT * FROM PatientRepo;
+

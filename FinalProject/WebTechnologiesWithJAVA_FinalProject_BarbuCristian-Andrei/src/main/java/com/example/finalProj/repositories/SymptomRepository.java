@@ -4,8 +4,6 @@ import com.example.finalProj.domain.Symptom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -21,15 +19,17 @@ public class SymptomRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
+    //eroarea returnata este "cannot find symbol". Presupunerea mea este ca lombok nu a generat cum trebuie getterii si setterii
     public Symptom insertSymptom(Symptom symptom){
         String sql = "INSERT INTO SymptomsRepo VALUES(NULL, ?, ?)";
-        KeyHolder holder = new GeneratedKeyHolder();
+
         jdbcTemplate.update(connection -> {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, symptom.getName());
             preparedStatement.setString(2, symptom.getDescription());
             return preparedStatement;
-        },holder);
+        });
 
         return symptom;
     }
